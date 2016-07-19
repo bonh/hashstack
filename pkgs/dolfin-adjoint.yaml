@@ -4,8 +4,8 @@ dependencies:
   run: [dolfin, ffc, fiat, instant, libadjoint, numpy, scipy, ufl]
 
 sources:
-- key: tar.gz:6jw62mw6yaevobxwnm5zphguxgrnqhzz
-  url: https://bitbucket.org/dolfin-adjoint/dolfin-adjoint/get/dolfin-adjoint-1.5.tar.gz
+- key: tar.gz:2e7s5tammptb4pzcy66amkid6svgg2ay
+  url: https://bitbucket.org/dolfin-adjoint/dolfin-adjoint/get/dolfin-adjoint-1.6.tar.gz
 
 when_build_dependency:
 - prepend_path: PATH
