@@ -1,0 +1,13 @@
+diff -Nru VTK.orig/Rendering/vtkOpenGL.h VTK/Rendering/vtkOpenGL.h
+--- VTK.orig/CMake/vtkCompilerExtras.cmake	2014-12-07 10:27:53.956000731 +0100
++++ VTK/CMake/vtkCompilerExtras.cmake	2014-12-07 10:29:45.640035032 +0100
+
+@@ -25,7 +25,7 @@
+   # Now check if we can use visibility to selectively export symbols
+   exec_program(${CMAKE_C_COMPILER} ARGS --version OUTPUT_VARIABLE
+     _gcc_version_info)
+-  string (REGEX MATCH "[345]\\.[0-9]\\.[0-9]" 
++  string (REGEX MATCH "[3456]\\.[0-9]\\.[0-9]" 
+     _gcc_version "${_gcc_version_info}")
+   if(NOT _gcc_version)
+     string (REGEX REPLACE ".*\\(GCC\\).* ([34]\\.[0-9]) .*" "\\1.0" 

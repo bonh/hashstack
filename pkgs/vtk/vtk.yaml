@@ -35,6 +35,13 @@ build_stages:
   bash: |
     patch -p1 < _hashdist/GLX_GLEXT_LEGACY.patch
 
+- name: gcc_6_patch
+  files: [gcc_6.patch]
+  handler: bash
+  before: setup_builddir
+  bash: |
+    patch -p1 < _hashdist/gcc_6.patch
+
 - when: platform == 'Cygwin'
   files: [vtk-5.10.1-cygwin.patch]
   name: vtk_cygwin_patch
@@ -63,6 +70,7 @@ build_stages:
     - '-D CMAKE_INSTALL_RPATH:STRING="${ARTIFACT}/lib/vtk-5.10"'
     - '-D PYTHON_EXECUTABLE:FILEPATH="${PYTHON}"'
     - '-D VTK_USE_SYSTEM_TIFF:BOOL=ON'
+    - '-D CMAKE_CXX_FLAGS:STRING=-std=c++98'
 
 - when: vtk_use_tk
   name: configure
